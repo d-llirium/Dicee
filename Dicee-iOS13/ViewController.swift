@@ -14,18 +14,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    var leftDiceNumber = 1
+    var rightDiceNumber = 5
+    
     // MARK: - FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Who.What = value
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
+
     }
 
     // IBAction is where we put what will happen whe the UI element got an interaction
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceFour")
-        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceFour")
+        let dices = [ UIImage(named: "DiceOne"),
+                      UIImage(named: "DiceTwo"),
+                      UIImage(named: "DiceThree"),
+                      UIImage(named: "DiceFour"),
+                      UIImage(named: "DiceFive"),
+                      UIImage(named: "DiceSix")
+        ]
+        diceImageView1.image = dices[leftDiceNumber]
+        diceImageView2.image = dices[rightDiceNumber] 
+        
+        leftDiceNumber += 1
+        rightDiceNumber -= 1
     }
     
 }
