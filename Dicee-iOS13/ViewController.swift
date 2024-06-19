@@ -17,13 +17,9 @@ class ViewController: UIViewController {
     // MARK: - FUNCTIONS
     // IBAction is where we put what will happen whe the UI element got an interaction
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        let dices = [ UIImage(named: "DiceOne"),
-                      UIImage(named: "DiceTwo"),
-                      UIImage(named: "DiceThree"),
-                      UIImage(named: "DiceFour"),
-                      UIImage(named: "DiceFive"),
-                      UIImage(named: "DiceSix")
-        ]
+        //        let dices = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix") ]
+        let dices = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix") ]
+        
         diceImageView1.image = dices[Int.random(in: 0...5)]
         diceImageView2.image = dices[Int.random(in: 0...5)]
     }
